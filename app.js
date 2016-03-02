@@ -12,6 +12,8 @@ var para2 = 'vulnerable unequivocal trajectory threshold jurisdiction phenomenon
 // 65
 var para3 = 'hippopotomonstrosesquipedaliophobia xenophobia transformation jurisprudence kaleidoscope oliguretic infrastructure nonlepidopterous velvetiness magnetometry unparceling economist uncollegiate petitory unmaniacal aluminosity unpacified preadherence reconstructiveness uncurableness inconsiderate premaking criminatory uncontrastable disassociated chlorellaceous non-metalliferous computerizing alliterativeness fibrinogenous depopulate caryatides macroclimatology hypnotisable impervious untouchability unbiddable triradiate-lodestone reconverged calciphilic kleptomania advertising libellant vulgariser nonwavering alienator originate microcline boutonniere tectonic overflatten untravestied obliging subinfeudating incompatibly supercalifragilisticexpialidocious agglutinability infinitize nomination aerodyne capsulized eruption cellophane';
 
+var wordsPerMinute;
+var totalChars;
 var wordsList;
 var wordCount;
 var errorCount;
@@ -76,19 +78,18 @@ function verifyInput() {
 }
 
 function getWordsPerMinute() {
-    var totalChars = 0;
+    totalChars = 0;
     for (var c = 0; c < correctWords; c++) {
         var chars = wordsList[c].length;
         totalChars += (chars + 1);
     }
-    console.log("Total chars from correctly typed words: " + totalChars);
 
     if (correctWords === 0) {
         console.log('Words Per Minute: 0');
     } else {
         var totalMinutes = gameTimer / 60;
-        var wordsPerMinute = ((totalChars / 5) / totalMinutes);
-        console.log('Words Per Minute: ' + Math.round(wordsPerMinute));
+        wordsPerMinute = ((totalChars / 5) / totalMinutes);
+
     }
 }
 
@@ -217,10 +218,12 @@ function endGame() {
     $("#restartBtn").show();
 
     console.log("Total Words: " + wordsList.length)
+    console.log("Time: " + gameTimer + " seconds");
     console.log("Words Typed Correctly: " + (correctWords))
     console.log("Words Typed Incorrectly: " + (wordsList.length - correctWords));
     console.log("Typos: " + errorCount);
-    console.log("Time: " + gameTimer + " seconds");
+    console.log("Total chars from correctly typed words: " + totalChars);
+    console.log('Words Per Minute: ' + Math.round(wordsPerMinute));
 
     clearInterval(myTimer);
     clearInterval(focusTimer);
