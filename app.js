@@ -58,10 +58,6 @@ function verifyInput() {
         // console.log('Count: ' + wordCount);
 
         if (wordCount >= wordsList.length) {
-            console.log("Total Words: " + wordsList.length)
-            console.log("Words Typed Correctly: " + (correctWords))
-            console.log("Words Typed Incorrectly: " + (wordsList.length - correctWords));
-            console.log("Typos: " + errorCount);
             endGame();
         } else {
 
@@ -220,6 +216,12 @@ function endGame() {
     $("#replayBtn").show();
     $("#restartBtn").show();
 
+    console.log("Total Words: " + wordsList.length)
+    console.log("Words Typed Correctly: " + (correctWords))
+    console.log("Words Typed Incorrectly: " + (wordsList.length - correctWords));
+    console.log("Typos: " + errorCount);
+    console.log("Time: " + gameTimer + " seconds");
+
     clearInterval(myTimer);
     clearInterval(focusTimer);
     getWordsPerMinute();
@@ -312,6 +314,7 @@ function countTimer() {
     gameTimer += 1;
     // console.log(gameTimer + ' sec');
 }
+
 function reFocus() {
     document.getElementById('typeInput').focus();
 }
