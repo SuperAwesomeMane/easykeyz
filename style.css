@@ -80,6 +80,9 @@ li {
     text-align: center;
     margin-top: 10px;
 }
+.results {
+	font-size: 2em;
+}
 .wordList {
 	width: 500;
 	height: 250;
