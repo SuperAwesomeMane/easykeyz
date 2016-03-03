@@ -27,7 +27,10 @@ $(document).ready(function() {
     document.getElementById('typeInput').onkeydown = function(event) {
         if (event.keyCode == 27) {
             endGame();
-        } else {
+        } 
+        else if((event.keyCode >= 65 && event.keyCode <= 90) 
+            || event.keyCode == 32 || event.keyCode == 13
+            || event.keyCode == 8) {
             verifyInput();
         }
     }
@@ -79,6 +82,7 @@ function verifyInput() {
 
 function getWordsPerMinute() {
     totalChars = 0;
+    wordsPerMinute = 0;
     for (var c = 0; c < correctWords; c++) {
         var chars = wordsList[c].length;
         totalChars += (chars + 1);
@@ -217,6 +221,10 @@ function endGame() {
     $("#replayBtn").show();
     $("#restartBtn").show();
 
+    clearInterval(myTimer);
+    clearInterval(focusTimer);
+    getWordsPerMinute();
+
     console.log("Total Words: " + wordsList.length)
     console.log("Time: " + gameTimer + " seconds");
     console.log("Words Typed Correctly: " + (correctWords))
@@ -224,10 +232,6 @@ function endGame() {
     console.log("Typos: " + errorCount);
     console.log("Total chars from correctly typed words: " + totalChars);
     console.log('Words Per Minute: ' + Math.round(wordsPerMinute));
-
-    clearInterval(myTimer);
-    clearInterval(focusTimer);
-    getWordsPerMinute();
 }
 
 function createListeners() {
@@ -315,7 +319,7 @@ function resetGame() {
 
 function countTimer() {
     gameTimer += 1;
-    // console.log(gameTimer + ' sec');
+    console.log(gameTimer + ' sec');
 }
 
 function reFocus() {
