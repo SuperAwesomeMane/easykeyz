@@ -2,15 +2,12 @@ var gameDifficulty;
 var myTimer;
 var focusTimer;
 
-// 80
 var para1 = 'the and that plane have for not with free mind strong warm sleep book mark bird soon body dog write way cause cut you this but his from they say her she or an will my one all would there their what so up out if about who get which go me when make can like time no just him know take people into year your good some could them see other than then now look should only come its';
-// var para1 = 'the and that';
-
-// 71
-var para2 = 'vulnerable unequivocal trajectory threshold jurisdiction phenomenon gregarious facilitate fiduciary eventually environment abdicate aberration abstain mountain machine contain develop possible schemer discipline medicate refract thereafter letter often money simple rebrace sentence interpolate instinct drabness underwood stinging blooming concord outrang wholesale rumpless dimness revival empathy rundown indulgence inspirit lovey verdict branch copywriter measure produce nothing question complete though enough unfinished country between remember interest people thousand language morning laceration perhaps listen picture';
-
-// 65
-var para3 = 'hippopotomonstrosesquipedaliophobia xenophobia transformation jurisprudence kaleidoscope oliguretic infrastructure nonlepidopterous velvetiness magnetometry unparceling economist uncollegiate petitory unmaniacal aluminosity unpacified preadherence reconstructiveness uncurableness inconsiderate premaking criminatory uncontrastable disassociated chlorellaceous non-metalliferous computerizing alliterativeness fibrinogenous depopulate caryatides macroclimatology hypnotisable impervious untouchability unbiddable triradiate-lodestone reconverged calciphilic kleptomania advertising libellant vulgariser nonwavering alienator originate microcline boutonniere tectonic overflatten untravestied obliging subinfeudating incompatibly supercalifragilisticexpialidocious agglutinability infinitize nomination aerodyne capsulized eruption cellophane';
+console.log(para1.split(' ').length);
+var para2 = 'vulnerable unequivocal trajectory threshold jurisdiction phenomenon gregarious facilitate fiduciary eventually environment abdicate aberration abstain mountain machine contain develop possible schemer discipline medicate refract thereafter letter often money simple rebrace sentence interpolate instinct drabness underwood stinging blooming concord outrang wholesale rumpless dimness revival empathy rundown indulgence inspirit lovey verdict branch copywriter measure produce nothing question complete though enough unfinished country between remember interest people thousand language morning laceration perhaps listen picture eruption';
+console.log(para2.split(' ').length);
+var para3 = 'hippopotomonstrosesquipedaliophobia xenophobia transformation jurisprudence kaleidoscope oliguretic infrastructure nonlepidopterous velvetiness magnetometry unparceling economist uncollegiate petitory unmaniacal aluminosity unpacified preadherence reconstructiveness uncurableness inconsiderate premaking criminatory uncontrastable disassociated chlorellaceous non-metalliferous computerizing alliterativeness fibrinogenous depopulate caryatides macroclimatology hypnotisable impervious untouchability unbiddable triradiate-lodestone reconverged calciphilic kleptomania advertising libellant vulgariser nonwavering alienator originate microcline boutonniere tectonic overflatten untravestied obliging subinfeudating incompatibly supercalifragilisticexpialidocious agglutinability infinitize nomination aerodyne capsulized cellophane';
+console.log(para3.split(' ').length);
 
 var wordsPerMinute;
 var totalChars;
@@ -105,9 +102,10 @@ function showMenus() {
     $("#typeInput").hide();
     $("#wordList").hide();
     $("#gameTimer").hide();
+    $("#escInst").hide();
 
     setTimeout(function() {
-        var appTitle = 'EAZY_KEYZ'
+        var appTitle = 'EAZY_KEYZ';
         var appTitleLetters = jQuery.map(appTitle.split(''), function(letter) {
             return $('<span>' + letter + '</span>');
         });
@@ -119,8 +117,38 @@ function showMenus() {
             appTitleLetters[c].appendTo(appTitleDest).hide().show();
             c += 1;
             if (c >= appTitleLetters.length) clearInterval(i);
-        }, 50);
+        }, 25);
     }, 0);
+    setTimeout(function() {
+        var header1 = 'How fast can you type? Find out!';
+        var appTitleLetters = jQuery.map(header1.split(''), function(letter) {
+            return $('<span>' + letter + '</span>');
+        });
+
+        var appTitleDest = $('#h1');
+
+        var c = 0;
+        var i = setInterval(function() {
+            appTitleLetters[c].appendTo(appTitleDest).hide().show();
+            c += 1;
+            if (c >= appTitleLetters.length) clearInterval(i);
+        }, 10);
+    }, 500);
+    setTimeout(function() {
+        var header1 = 'When you start the game, act like you\'re actually typing and press space after each word. OR, you can be weird and press ENTER after every word...as if would actually people type like that.';
+        var appTitleLetters = jQuery.map(header1.split(''), function(letter) {
+            return $('<span>' + letter + '</span>');
+        });
+
+        var appTitleDest = $('#h2');
+
+        var c = 0;
+        var i = setInterval(function() {
+            appTitleLetters[c].appendTo(appTitleDest).hide().show();
+            c += 1;
+            if (c >= appTitleLetters.length) clearInterval(i);
+        }, 10);
+    }, 1000);
     setTimeout(function() {
         var difTitle = "Choose a difficulty";
         var difTitleLetters = jQuery.map(difTitle.split(''), function(letter) {
@@ -134,10 +162,10 @@ function showMenus() {
             difTitleLetters[c].appendTo(difTitleDest).hide().show();
             c += 1;
             if (c >= difTitleLetters.length) clearInterval(i);
-        }, 50);
-    }, 500);
+        }, 25);
+    }, 3500);
     setTimeout(function() {
-        var difTitle = "Easy";
+        var difTitle = "Common Peasant";
         var difTitleLetters = jQuery.map(difTitle.split(''), function(letter) {
             return $('<span>' + letter + '</span>');
         });
@@ -149,10 +177,10 @@ function showMenus() {
             difTitleLetters[c].appendTo(difTitleDest).hide().show();
             c += 1;
             if (c >= difTitleLetters.length) clearInterval(i);
-        }, 110);
-    }, 500);
+        }, 30);
+    }, 3500);
     setTimeout(function() {
-        var difTitle = "Medium";
+        var difTitle = "Civil Bookworm";
         var difTitleLetters = jQuery.map(difTitle.split(''), function(letter) {
             return $('<span>' + letter + '</span>');
         });
@@ -164,10 +192,10 @@ function showMenus() {
             difTitleLetters[c].appendTo(difTitleDest).hide().show();
             c += 1;
             if (c >= difTitleLetters.length) clearInterval(i);
-        }, 115);
-    }, 500);
+        }, 35);
+    }, 3500);
     setTimeout(function() {
-        var difTitle = "Hard";
+        var difTitle = "Lonely Librarian";
         var difTitleLetters = jQuery.map(difTitle.split(''), function(letter) {
             return $('<span>' + letter + '</span>');
         });
@@ -178,12 +206,12 @@ function showMenus() {
             difTitleLetters[c].appendTo(difTitleDest).hide().show();
             c += 1;
             if (c >= difTitleLetters.length) clearInterval(i);
-        }, 130);
-    }, 500);
+        }, 25);
+    }, 3500);
     setTimeout(function() {
         $("#startBtn").show();
         document.getElementById('startBtn').disabled = true;
-    }, 1500);
+    }, 4000);
 }
 
 function showGame() {
@@ -193,6 +221,8 @@ function showGame() {
     $("#wordList").show();
     $("#gameTimer").hide();
     $("#results").hide();
+    $("#pregame").hide();
+    $("#escInst").show();
 
     var myNode = document.getElementById('wordList');
     while (myNode.firstChild) {
@@ -224,6 +254,7 @@ function endGame() {
     $("#replayBtn").show();
     $("#restartBtn").show();
     $("#results").show();
+    $("#escInst").hide();
 
     clearInterval(myTimer);
     clearInterval(focusTimer);
@@ -234,7 +265,7 @@ function endGame() {
     document.getElementById("goodWords").innerHTML = 'Words Typed Correctly: ' + (correctWords);
     document.getElementById("badWords").innerHTML = 'Words Typed Incorrectly: ' + (wordsList.length - correctWords);
     document.getElementById("typos").innerHTML = 'Typos: ' + errorCount;
-    document.getElementById("totalChars").innerHTML = 'Total chars from correctly typed words: ' + totalChars;
+    document.getElementById("totalChars").innerHTML = 'Characters from correctly typed words: ' + totalChars;
     document.getElementById("wpm").innerHTML = 'Words Per Minute: ' + Math.round(wordsPerMinute);
 
     console.log("Time: " + gameTimer + " seconds");
@@ -303,6 +334,7 @@ function createListeners() {
         $("#difList").show();
         $("#gameTimer").hide();
         $("#results").hide();
+        $("#pregame").show();
     });
 }
 

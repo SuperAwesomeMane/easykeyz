@@ -15,14 +15,21 @@
 	</nav>
 
 	<main class="mainBody">
+
+	<div id="pregame">
+		<h1 id="h1"></h1>
+		<h2 id="h2"></h2>
+		<hr>
+	</div>
 		<ul class="difList" id="difList">
-			<h2 id="difTitle"></h2>
+			<h2 id="difTitle" class="difTitle"></h2>
 			<li><a href="#" id="easy"></a></li>
 			<li><a href="#" id="medium"></a></li>
 			<li><a href="#" id="hard"></a></li>
 			<li><input id="startBtn" class="startBtn" type="button" value="Start" /></li>
 		</ul>
 
+		<p id="escInst" class="esc">ESC to quit</p>
 		<ul class="wordList" id="wordList">
 		</ul><br><br>
 		<input type="text" class="typeInput" id="typeInput" />		
@@ -30,6 +37,7 @@
 		<input id="restartBtn" class="restartBtn" type="button" value="Menu" />
 
 		<p id="gameTimer" class="results"></p>
+
 		<div id="results" class="results">
 			<p id="totalWords"></p>
 			<p id="goodWords"></p>

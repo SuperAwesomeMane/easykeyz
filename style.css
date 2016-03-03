@@ -27,9 +27,9 @@ li {
 }
 
 .mainBody {
-	width: 500px;
+	width: 550px;
 	margin: 0 auto;
-	margin-top: 200px;
+	margin-top: 150px;
 	margin-bottom: 30px;
 	text-align: center;
 	padding-right: 10px;
@@ -39,7 +39,9 @@ li {
 	margin: 0;
 	text-align: center;
 	margin: 0 auto;
-	margin-top: 100px;
+}
+.difTitle {
+	font-size: 2em;
 }
 .difList {
 	margin: 0;
@@ -47,7 +49,7 @@ li {
 	text-align: center;
 }
 .difList li {
-	font-size: 3em;
+	font-size: 1.5em;
 }
 .difList a {
 	color: #616161;
@@ -82,6 +84,9 @@ li {
 }
 .results {
 	font-size: 2em;
+}
+.esc {
+	font-size: 14px;
 }
 .wordList {
 	width: 500;
