@@ -232,7 +232,7 @@ function endGame() {
     document.getElementById("typeInput").value = '';
     document.getElementById("totalWords").innerHTML = 'Total Words: ' + wordsList.length;
     document.getElementById("goodWords").innerHTML = 'Words Typed Correctly: ' + (correctWords);
-    document.getElementById("badWords").innerHTML = 'Words Typed Incorrectly: '' + (wordsList.length - correctWords);
+    document.getElementById("badWords").innerHTML = 'Words Typed Incorrectly: ' + (wordsList.length - correctWords);
     document.getElementById("typos").innerHTML = 'Typos: ' + errorCount;
     document.getElementById("totalChars").innerHTML = 'Total chars from correctly typed words: ' + totalChars;
     document.getElementById("wpm").innerHTML = 'Words Per Minute: ' + Math.round(wordsPerMinute);
