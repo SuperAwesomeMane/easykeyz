@@ -135,7 +135,7 @@ function showMenus() {
         }, 10);
     }, 500);
     setTimeout(function() {
-        var header1 = 'When you start the game, act like you\'re actually typing and press space after each word. OR, you can be weird and press ENTER after every word...as if would actually people type like that.';
+        var header1 = 'When you start the game, act as if you were actually typing and press space after each word (you type faster that way). OR you can be weird and press ENTER after every word...as if people actually type that way XD.';
         var appTitleLetters = jQuery.map(header1.split(''), function(letter) {
             return $('<span>' + letter + '</span>');
         });
