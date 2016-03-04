@@ -3,11 +3,11 @@ var myTimer;
 var focusTimer;
 
 var para1 = 'the and that plane have for not with free mind strong warm sleep book mark bird soon body dog write way cause cut you this but his from they say her she or an will my one all would there their what so up out if about who get which go me when make can like time no just him know take people into year your good some could them see other than then now look should only come its';
-// console.log(para1.split(' ').length);
+console.log(para1.split(' ').length);
 var para2 = 'vulnerable unequivocal trajectory threshold jurisdiction phenomenon gregarious facilitate fiduciary eventually environment abdicate aberration abstain mountain machine contain develop possible schemer discipline medicate refract thereafter letter often money simple rebrace sentence interpolate instinct drabness underwood stinging blooming concord outrang wholesale rumpless dimness revival empathy rundown indulgence inspirit lovey verdict branch copywriter measure produce nothing question complete though enough unfinished country between remember interest people thousand language morning laceration perhaps listen picture eruption';
-// console.log(para2.split(' ').length);
+console.log(para2.split(' ').length);
 var para3 = 'hippopotomonstrosesquipedaliophobia xenophobia transformation jurisprudence kaleidoscope oliguretic infrastructure nonlepidopterous velvetiness magnetometry unparceling economist uncollegiate petitory unmaniacal aluminosity unpacified preadherence reconstructiveness uncurableness inconsiderate premaking criminatory uncontrastable disassociated chlorellaceous non-metalliferous computerizing alliterativeness fibrinogenous depopulate caryatides macroclimatology hypnotisable impervious untouchability unbiddable triradiate-lodestone reconverged calciphilic kleptomania advertising libellant vulgariser nonwavering alienator originate microcline boutonniere tectonic overflatten untravestied obliging subinfeudating incompatibly supercalifragilisticexpialidocious agglutinability infinitize nomination aerodyne capsulized cellophane';
-// console.log(para3.split(' ').length);
+console.log(para3.split(' ').length);
 
 var wordsPerMinute;
 var totalChars;
