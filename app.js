@@ -17,6 +17,7 @@ var errorCount;
 var correctWords;
 var totalPossibleCorrectWords;
 var hasBeenTypedBefore;
+var score;
 
 $(document).ready(function() {
     showMenus();
@@ -42,10 +43,22 @@ function verifyInput() {
     if (event.keyCode == 32 || event.keyCode == 13) {
         if (typedWord === wordsList[wordCount]) {
             wordCount += 1;
+            score += 100;
             hasBeenTypedBefore = false;
         } else {
             document.getElementById('typeInput').style.color = 'red';
             errorCount += 1;
+            if(gameDifficulty === 'easy') {
+                score -= 50;
+            } else if(gameDifficulty === 'medium') {
+                score -= 100;
+            } else if(gameDifficulty === 'hard') {
+                if(score <= 0) {
+                    score -= 200;
+                } else {
+                    score = score / 2;
+                }
+            }
             if (!hasBeenTypedBefore) {
                 hasBeenTypedBefore = true;
                 correctWords -= 1;
@@ -335,6 +348,7 @@ function createListeners() {
         $("#gameTimer").hide();
         $("#results").hide();
         $("#pregame").show();
+        $("#score").hide();
     });
 }
 
@@ -349,16 +363,19 @@ function resetGame() {
     $("#typeInput").show();
     $("#wordList").show();
     $("#gameTimer").show();
+    $("#score").show();
 
 
     wordCount = 0;
     gameTimer = 0;
     errorCount = 0;
+    score = 0;
     correctWords = wordsList.length;
     hasBeenTypedBefore = false;
     sortjs.randomize(wordsList);
     
     document.getElementById("gameTimer").innerHTML = 'Time: 0s';
+    document.getElementById("score").innerHTML = 'Score: 0 pts';
     document.getElementById("currentWord").innerHTML = wordsList[wordCount];
     document.getElementById("nextWord").innerHTML = wordsList[wordCount + 1];
     document.getElementById("laterWord").innerHTML = wordsList[wordCount + 2];
@@ -376,4 +393,5 @@ function countTimer() {
 
 function reFocus() {
     document.getElementById('typeInput').focus();
+    document.getElementById("score").innerHTML = 'Score: ' + score + ' pts';
 }
